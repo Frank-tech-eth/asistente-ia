@@ -1,0 +1,535 @@
+.emergency-kit {
+  background: rgba(15, 15, 35, 0.95);
+  backdrop-filter: blur(20px);
+  border-radius: 20px;
+  padding: 2rem;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+  border: 1px solid rgba(239, 68, 68, 0.3);
+  color: #e2e8f0;
+  max-width: 1200px;
+  margin: 0 auto;
+  position: relative;
+}
+
+.emergency-header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.emergency-header h2 {
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+  background: linear-gradient(135deg, #ef4444, #f97316, #fbbf24);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  font-weight: 700;
+}
+
+.emergency-header p {
+  color: #94a3b8;
+  font-size: 1rem;
+}
+
+.emergency-button-container {
+  text-align: center;
+  margin-bottom: 2rem;
+  animation: pulse 2s infinite;
+}
+
+.emergency-button {
+  background: linear-gradient(135deg, #ef4444, #f97316);
+  border: none;
+  border-radius: 15px;
+  padding: 1.5rem 2rem;
+  color: white;
+  font-size: 1.2rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 8px 25px rgba(239, 68, 68, 0.4);
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  align-items: center;
+}
+
+.emergency-button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 35px rgba(239, 68, 68, 0.6);
+  background: linear-gradient(135deg, #dc2626, #ea580c);
+}
+
+.emergency-button span {
+  font-size: 0.9rem;
+  font-weight: 400;
+  opacity: 0.9;
+}
+
+.breathing-overlay,
+.grounding-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.9);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  animation: fadeIn 0.3s ease-out;
+}
+
+.breathing-circle {
+  width: 300px;
+  height: 300px;
+  border: 4px solid;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: breathe 4s ease-in-out infinite;
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(10px);
+}
+
+.breathing-text {
+  text-align: center;
+  color: white;
+}
+
+.breathing-text h3 {
+  margin-bottom: 1rem;
+  font-size: 1.5rem;
+}
+
+.breathing-instruction {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  text-shadow: 0 0 20px rgba(255, 255, 255, 0.5);
+}
+
+.breathing-timer {
+  font-size: 4rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  color: #fbbf24;
+}
+
+.breathing-cycle {
+  font-size: 1rem;
+  opacity: 0.8;
+}
+
+.grounding-card {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(20px);
+  border: 2px solid;
+  border-radius: 20px;
+  padding: 3rem;
+  text-align: center;
+  color: white;
+  max-width: 500px;
+  animation: slideIn 0.5s ease-out;
+}
+
+.grounding-icon {
+  font-size: 4rem;
+  margin-bottom: 1rem;
+}
+
+.grounding-card h3 {
+  font-size: 1.8rem;
+  margin-bottom: 2rem;
+}
+
+.grounding-step {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 2rem;
+  padding: 1rem;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  animation: pulse 2s infinite;
+}
+
+.grounding-progress {
+  font-size: 1rem;
+  opacity: 0.8;
+}
+
+.stop-exercise-btn {
+  margin-top: 2rem;
+  background: rgba(239, 68, 68, 0.8);
+  border: none;
+  border-radius: 12px;
+  padding: 1rem 2rem;
+  color: white;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.stop-exercise-btn:hover {
+  background: rgba(239, 68, 68, 1);
+  transform: translateY(-2px);
+}
+
+.emergency-sections {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+}
+
+.breathing-section,
+.grounding-section,
+.contacts-section,
+.quick-tips {
+  background: rgba(20, 20, 40, 0.8);
+  border: 1px solid rgba(99, 102, 241, 0.2);
+  border-radius: 15px;
+  padding: 2rem;
+}
+
+.breathing-section h3,
+.grounding-section h3,
+.contacts-section h3,
+.quick-tips h3 {
+  margin-bottom: 0.5rem;
+  color: #cbd5e1;
+  font-size: 1.3rem;
+}
+
+.breathing-section p,
+.grounding-section p,
+.contacts-section p {
+  color: #94a3b8;
+  margin-bottom: 1.5rem;
+  font-size: 0.9rem;
+}
+
+.exercises-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+}
+
+.exercise-card {
+  background: rgba(30, 30, 50, 0.8);
+  border: 2px solid rgba(99, 102, 241, 0.2);
+  border-radius: 12px;
+  padding: 1.5rem;
+  transition: all 0.3s ease;
+}
+
+.exercise-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+}
+
+.exercise-card.active {
+  border-color: currentColor;
+  background: rgba(255, 255, 255, 0.05);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
+}
+
+.exercise-header {
+  margin-bottom: 1rem;
+}
+
+.exercise-header h4 {
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  color: #e2e8f0;
+}
+
+.exercise-header p {
+  font-size: 0.85rem;
+  color: #94a3b8;
+  margin: 0;
+}
+
+.exercise-icon {
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+  display: block;
+}
+
+.exercise-details {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.exercise-details span {
+  font-size: 0.8rem;
+  color: #cbd5e1;
+  background: rgba(255, 255, 255, 0.05);
+  padding: 0.3rem 0.6rem;
+  border-radius: 6px;
+  text-align: center;
+}
+
+.exercise-steps {
+  margin-bottom: 1rem;
+}
+
+.step-item {
+  font-size: 0.85rem;
+  color: #cbd5e1;
+  padding: 0.5rem 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.step-item:last-child {
+  border-bottom: none;
+}
+
+.start-exercise-btn {
+  width: 100%;
+  padding: 0.8rem;
+  border: none;
+  border-radius: 8px;
+  color: white;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.start-exercise-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+.contacts-list {
+  margin-bottom: 1.5rem;
+}
+
+.contact-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.8rem;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 8px;
+  margin-bottom: 0.5rem;
+}
+
+.contact-name {
+  color: #e2e8f0;
+  font-weight: 500;
+}
+
+.remove-contact-btn {
+  background: rgba(239, 68, 68, 0.2);
+  border: none;
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  color: #ef4444;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.remove-contact-btn:hover {
+  background: rgba(239, 68, 68, 0.4);
+  transform: scale(1.1);
+}
+
+.add-contact {
+  display: flex;
+  gap: 1rem;
+}
+
+.add-contact input {
+  flex: 1;
+  padding: 0.8rem;
+  background: rgba(30, 30, 50, 0.9);
+  border: 1px solid rgba(99, 102, 241, 0.3);
+  border-radius: 8px;
+  color: #e2e8f0;
+  font-size: 0.9rem;
+}
+
+.add-contact input:focus {
+  outline: none;
+  border-color: #6366f1;
+  box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.1);
+}
+
+.add-contact button {
+  padding: 0.8rem 1.5rem;
+  background: linear-gradient(135deg, #6366f1, #8b5cf6);
+  border: none;
+  border-radius: 8px;
+  color: white;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.add-contact button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 15px rgba(99, 102, 241, 0.3);
+}
+
+.tips-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
+}
+
+.tip-card {
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 12px;
+  padding: 1.5rem;
+  text-align: center;
+  transition: all 0.3s ease;
+}
+
+.tip-card:hover {
+  transform: translateY(-3px);
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.tip-icon {
+  font-size: 2.5rem;
+  display: block;
+  margin-bottom: 1rem;
+}
+
+.tip-card h4 {
+  font-size: 1rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  color: #e2e8f0;
+}
+
+.tip-card p {
+  font-size: 0.8rem;
+  color: #94a3b8;
+  margin: 0;
+  line-height: 1.4;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+}
+
+@keyframes breathe {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .emergency-kit {
+    padding: 1rem;
+    margin: 0.5rem;
+  }
+  
+  .emergency-header h2 {
+    font-size: 1.5rem;
+  }
+  
+  .emergency-button {
+    padding: 1rem 1.5rem;
+    font-size: 1rem;
+  }
+  
+  .breathing-circle {
+    width: 250px;
+    height: 250px;
+  }
+  
+  .breathing-instruction {
+    font-size: 1.5rem;
+  }
+  
+  .breathing-timer {
+    font-size: 3rem;
+  }
+  
+  .grounding-card {
+    padding: 2rem;
+    margin: 1rem;
+  }
+  
+  .exercises-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .exercise-details {
+    grid-template-columns: 1fr;
+  }
+  
+  .tips-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .add-contact {
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 480px) {
+  .breathing-circle {
+    width: 200px;
+    height: 200px;
+  }
+  
+  .breathing-instruction {
+    font-size: 1.2rem;
+  }
+  
+  .breathing-timer {
+    font-size: 2.5rem;
+  }
+  
+  .grounding-card {
+    padding: 1.5rem;
+  }
+  
+  .grounding-step {
+    font-size: 1.2rem;
+  }
+  
+  .tips-grid {
+    grid-template-columns: 1fr;
+  }
+} 
