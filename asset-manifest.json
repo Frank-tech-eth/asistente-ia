@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/asistente-ia/static/css/main.8c685aa3.css",
+    "main.js": "/asistente-ia/static/js/main.7c49a64e.js",
+    "static/js/453.4e5c66b4.chunk.js": "/asistente-ia/static/js/453.4e5c66b4.chunk.js",
+    "index.html": "/asistente-ia/index.html",
+    "main.8c685aa3.css.map": "/asistente-ia/static/css/main.8c685aa3.css.map",
+    "main.7c49a64e.js.map": "/asistente-ia/static/js/main.7c49a64e.js.map",
+    "453.4e5c66b4.chunk.js.map": "/asistente-ia/static/js/453.4e5c66b4.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.8c685aa3.css",
+    "static/js/main.7c49a64e.js"
+  ]
+}
